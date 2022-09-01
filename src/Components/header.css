@@ -1,0 +1,30 @@
+.header {
+  position: fixed;
+  background-color: white;
+  width: 97%;
+  z-index: 1000;
+  top: 0px;
+  left: 0px;
+  margin-right: 1em;
+  padding: 0.4em;
+  font-size: 1.4em;
+  display: flex;
+  border-bottom: 1px solid black;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rightSection {
+  display: flex;
+  gap: 1em;
+}
+.rightSectionOptions,
+.leftSectionOptions {
+  padding: 0.5em;
+  border-radius: 0.2em;
+}
+
+.rightSectionOptions:hover,
+.leftSectionOptions:hover {
+  background-color: rgb(131, 131, 131);
+}
