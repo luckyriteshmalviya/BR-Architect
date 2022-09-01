@@ -4,26 +4,32 @@ import MembersDetails from "./membersDetails";
 import Projects from "./projects";
 
 function MainBody() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [comment, setComment] = useState("");
-  const [input, setInput] = useState({});
+  const [details, setDetails] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    comment: "",
+  });
 
-  function saveData() {
-    setInput({
-      userName: name,
-      UserEmail: email,
-      UserSubject: subject,
-      UserComment: comment,
-    });
-    console.log(input);
-    localStorage.setItem("details", JSON.stringify(input));
-    setComment("");
-    setEmail("");
-    setName("");
-    setSubject("");
+  function saveData(e) {
+    e.preventDefault();
+    const payload = {
+      userName: details.name,
+      UserEmail: details.email,
+      UserSubject: details.subject,
+      UserComment: details.comment,
+    };
+
+    const savedDetails = JSON.parse(localStorage.getItem("details")) || [];
+    localStorage.setItem("details", JSON.stringify([...savedDetails, payload]));
+    setDetails({ name: "", email: "", subject: "", comment: "" });
   }
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setDetails({ ...details, [name]: value });
+  }
+
   return (
     <>
       <div className="firstSection">
@@ -94,37 +100,33 @@ function MainBody() {
           <input
             className="contact"
             type="text"
-            value={name}
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
+            name="name"
+            value={details.name}
+            onChange={handleChange}
             placeholder="Name"
           />
           <input
             className="contact"
             type="email"
-            value={email}
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
+            name="email"
+            value={details.email}
+            onChange={handleChange}
             placeholder="Email"
           />
           <input
             className="contact"
             type="text"
-            value={subject}
-            onChange={(e) => {
-              setSubject(e.target.value);
-            }}
+            name="subject"
+            value={details.subject}
+            onChange={handleChange}
             placeholder="Subject"
           />
           <input
             className="contact"
             type="text"
-            value={comment}
-            onChange={(e) => {
-              setComment(e.target.value);
-            }}
+            name="comment"
+            value={details.comment}
+            onChange={handleChange}
             placeholder="Comment"
           />
           <br />
