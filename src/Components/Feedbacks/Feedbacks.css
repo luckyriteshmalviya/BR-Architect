@@ -1,0 +1,31 @@
+table,
+td,
+th {
+  border: 1px solid;
+  text-align: center;
+  padding: 0.6em;
+}
+
+th {
+  font-size: 1.6em;
+}
+
+table {
+  margin: 2em;
+  width: 82%;
+  border-collapse: collapse;
+}
+
+h2 {
+  margin: 1.6em;
+}
+
+.GoToHomeBtn {
+  text-decoration: none;
+  float: right;
+  background-color: black;
+  color: white;
+  margin-right: 2em;
+  padding: 0.4em 2em;
+  font-size: 1.2em;
+}

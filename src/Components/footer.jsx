@@ -7,6 +7,8 @@ function Footer() {
     >
       <div
         style={{
+          display: "flex",
+          justifyContent: "center",
           backgroundColor: "black",
           color: "white",
           width: "100%",

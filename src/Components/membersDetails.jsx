@@ -2,7 +2,7 @@ import TeamMember from "./teamMember";
 
 function MembersDetails() {
   return (
-    <div style={{ display: "flex", gap: "10px" }}>
+    <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
       <TeamMember
         url={"./src/assets/teamMembers/memberOne.jpg"}
         name="John Doe"

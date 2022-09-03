@@ -1,0 +1,96 @@
+.fourthSection {
+  position: relative;
+}
+
+.firstSectionText {
+  position: absolute;
+  top: 55%;
+  left: 42%;
+}
+
+.backgroundColor {
+  width: 100%;
+}
+
+.secondSection,
+.thirdSection {
+  margin-top: 2em;
+}
+
+.fourthSection {
+  margin: 3em;
+}
+
+.fifthSection {
+  margin: 2em 2em 0.8em 3em;
+}
+
+.contactHeading {
+  font-size: 1.4em;
+  padding-left: 2em;
+  margin-bottom: 1em;
+  margin-top: 2em;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid lightgray;
+}
+
+.projectHeading,
+.aboutHeading {
+  font-size: 1.4em;
+  padding-left: 2em;
+  margin: 1em;
+}
+
+.projects {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.projectImage {
+  position: relative;
+  /* width: 300px;
+  height: 300px; */
+}
+
+.projectImages {
+  width: 300px;
+}
+.projectName {
+  padding: 0.6em;
+  position: absolute;
+  color: white;
+  background-color: black;
+  top: 0px;
+  font-size: 1.2em;
+  left: 0px;
+  width: 10em;
+}
+
+.about {
+  padding: 0 3em 1em 3em;
+  font-size: 1.2em;
+}
+
+.contact {
+  border: 1px solid rgb(191, 191, 191);
+  width: 96%;
+  border-radius: 0.3em;
+  padding: 1em;
+  margin: 0.6em;
+}
+
+.sendMsgBtn {
+  background-color: black;
+  color: white;
+  margin-left: 0.4em;
+  padding: 0.4em 2em;
+  font-size: 1.2em;
+}
+
+.buttons {
+  margin-right: 1em;
+  display: flex;
+  justify-content: space-between;
+}

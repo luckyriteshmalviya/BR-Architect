@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./mainBody.css";
-import MembersDetails from "./membersDetails";
-import Projects from "./projects";
+import MembersDetails from "../membersDetails";
+import Projects from "../projects";
+import { Link } from "react-router-dom";
 
 function MainBody() {
   const [details, setDetails] = useState({
@@ -13,16 +14,24 @@ function MainBody() {
 
   function saveData(e) {
     e.preventDefault();
-    const payload = {
-      userName: details.name,
-      UserEmail: details.email,
-      UserSubject: details.subject,
-      UserComment: details.comment,
-    };
+    if (details.name && details.email && details.subject && details.comment) {
+      const payload = {
+        userName: details.name,
+        UserEmail: details.email,
+        UserSubject: details.subject,
+        UserComment: details.comment,
+      };
 
-    const savedDetails = JSON.parse(localStorage.getItem("details")) || [];
-    localStorage.setItem("details", JSON.stringify([...savedDetails, payload]));
-    setDetails({ name: "", email: "", subject: "", comment: "" });
+      const savedDetails = JSON.parse(localStorage.getItem("details")) || [];
+      localStorage.setItem(
+        "details",
+        JSON.stringify([...savedDetails, payload])
+      );
+      setDetails({ name: "", email: "", subject: "", comment: "" });
+      document.getElementById("viewQueries").style.display = "block";
+    } else {
+      alert("Please fill all the input fields");
+    }
   }
 
   function handleChange(e) {
@@ -34,13 +43,32 @@ function MainBody() {
     <>
       <div className="firstSection">
         <img
-          style={{ width: "80em" }}
+          className="backgroundColor"
           src="./src/assets/BR-Architect.jpg"
           alt="Background-Image"
         />
+        <div className="firstSectionText">
+          <span
+            style={{
+              backgroundColor: "black",
+              opacity: "0.66",
+              color: "white",
+              padding: "0.4em",
+              fontSize: "2.2em",
+              fontFamily: "800",
+            }}
+          >
+            BR
+          </span>
+          <span
+            style={{ color: "white", fontSize: "2.2em", marginLeft: "0.4em" }}
+          >
+            Architects
+          </span>
+        </div>
       </div>
       <div className="secondSection">
-        <h3>Projects</h3>
+        <div className="projectHeading">Projects</div>
         <div className="projects">
           <Projects
             name="Summer House"
@@ -77,8 +105,8 @@ function MainBody() {
         </div>
       </div>
       <div className="thirdSection">
-        <h2>About</h2>
-        <div>
+        <div className="aboutHeading">About</div>
+        <div className="about">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -94,8 +122,10 @@ function MainBody() {
         </div>
       </div>
       <div className="fourthSection">
-        <h2>Contact</h2>
-        <div>Lets get in touch and talk about your next project.</div>
+        <div className="contactHeading">Contact</div>
+        <div style={{ paddingBottom: "0.6em", fontSize: "1.2em" }}>
+          Lets get in touch and talk about your next project.
+        </div>
         <form>
           <input
             className="contact"
@@ -131,11 +161,23 @@ function MainBody() {
           />
           <br />
           <br />
-          <button onClick={saveData}>Send Message</button>
+          <div className="buttons">
+            <button className="sendMsgBtn" onClick={saveData}>
+              Send Message
+            </button>
+            <Link
+              to="/queries"
+              className="sendMsgBtn"
+              id="viewQueries"
+              style={{ display: "none", textDecoration: "none" }}
+            >
+              View Queries
+            </Link>
+          </div>
         </form>
       </div>
       <div className="fifthSection">
-        <img style={{ width: "94%" }} src="./src/assets/Last Image.jpg" />
+        <img style={{ width: "92vw" }} src="./src/assets/Last Image.jpg" />
       </div>
     </>
   );
