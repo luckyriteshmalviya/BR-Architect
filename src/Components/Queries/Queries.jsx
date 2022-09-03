@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import "./Feedbacks.css";
+import "./Queries.css";
 
-function Feedbacks() {
+function Queries() {
   let setDetails = JSON.parse(localStorage.getItem("details"));
 
   return (
     <>
-      <h2>FEEDBACKS</h2>
+      <h2>Queries :-</h2>
       <table>
         <tbody>
           <tr>
@@ -32,4 +32,4 @@ function Feedbacks() {
   );
 }
 
-export default Feedbacks;
+export default Queries;

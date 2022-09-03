@@ -1,4 +1,4 @@
-import "./MainBody/mainBody.css";
+import "../mainBody.css";
 
 function Projects({ name, image }) {
   return (

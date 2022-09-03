@@ -1,0 +1,25 @@
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.name {
+  font-family: 700;
+  font-size: 1.5em;
+  margin-top: 0.4em;
+}
+
+.profile {
+  color: grey;
+  font-size: 1em;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  font-size: 1.2em;
+  background-color: lightgrey;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
