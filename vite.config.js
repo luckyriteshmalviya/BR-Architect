@@ -8,5 +8,5 @@ export default defineConfig({
   server: {
     host: true,
   },
-  base: `${ASSET_URL}/BR-Architect/`,
+  base: `${ASSET_URL}`,
 });

@@ -3,7 +3,7 @@ import "../mainBody.css";
 function ThirdSection() {
   return (
     <>
-      <div className="thirdSection">
+      <div className="thirdSection" id="thirdSection">
         <div className="aboutHeading">About</div>
         <div className="about">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

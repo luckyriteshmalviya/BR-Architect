@@ -2,7 +2,7 @@ import "../mainBody.css";
 function FirstSection() {
   return (
     <>
-      <div className="firstSection">
+      <div className="firstSection" id="firstSection">
         <img
           className="backgroundColor"
           src="./src/assets/BR-Architect.jpg"

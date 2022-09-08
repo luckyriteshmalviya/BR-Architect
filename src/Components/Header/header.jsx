@@ -10,13 +10,27 @@ function Header() {
         </div>
       </div>
       <div className="rightSection">
-        <div className="rightSectionOptions">Home</div>
-        <div className="rightSectionOptions">
-          <Link to="/people" style={{ textDecoration: "none", color: "black" }}>
-            People
-          </Link>
-        </div>
-        <div className="rightSectionOptions">Contact</div>
+        <a
+          style={{ textDecoration: "none", color: "black" }}
+          href="#firstSection"
+          className="rightSectionOptions"
+        >
+          Home
+        </a>
+        <a
+          style={{ textDecoration: "none", color: "black" }}
+          href="#thirdSection"
+          className="rightSectionOptions"
+        >
+          People
+        </a>
+        <a
+          className="rightSectionOptions"
+          style={{ textDecoration: "none", color: "black" }}
+          href="#fourthSection"
+        >
+          Contact
+        </a>
       </div>
     </div>
   );

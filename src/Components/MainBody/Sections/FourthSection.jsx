@@ -38,7 +38,7 @@ function FourthSection() {
 
   return (
     <>
-      <div className="fourthSection">
+      <div className="fourthSection" id="fourthSection">
         <div className="contactHeading">Contact</div>
         <div style={{ paddingBottom: "0.6em", fontSize: "1.2em" }}>
           Lets get in touch and talk about your next project.
